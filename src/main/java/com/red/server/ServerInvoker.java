@@ -36,18 +36,16 @@ public class ServerInvoker implements MethodInterceptor {
             enhancer.setCallback(this);
             Object o = enhancer.create();
             Method method = proxyClass.getMethod(methodName,ReflectionUtil.getClassType(args));
-            //RedMessage rsp = (RedMessage) method.invoke(o,args);
             ResponseMsg responseMsg = new ResponseMsg();
 
             try {
                 Object result = method.invoke(o, args);
                 responseMsg.setInvokeSucess(Constants.invoke_success);
                 responseMsg.setResult(result);
-
             }catch (Exception e){
                 System.out.println(e);
                 responseMsg.setInvokeSucess(Constants.invoke_fail);
-                responseMsg.setReason("params error");
+                responseMsg.setReason(e.getMessage());
             }
             return new RedMessage(responseMsg,MessageType.ServerResponse);
         }catch (Exception e){
@@ -58,7 +56,6 @@ public class ServerInvoker implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-            //ToDo:超时怎么中断呢
         String name = instanceName+"."+methodName;
         InvokerModel invokerModel = null;
         if((invokerModel = invokerMap.get(name)) == null) {

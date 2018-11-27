@@ -19,9 +19,7 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 import org.I0Itec.zkclient.IZkStateListener;
 import org.I0Itec.zkclient.ZkClient;
 import org.apache.log4j.Logger;
-import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -31,7 +29,6 @@ public class GeneralInvoker {
     private static ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*2);
     static Logger logger = Logger.getLogger(GeneralInvoker.class);
 
-    private CountDownLatch latch = new CountDownLatch(1);
     private CountDownLatch waitConnect = new CountDownLatch(1);
     private CountDownLatch waitResult = new CountDownLatch(1);
     private Channel channel;
@@ -39,15 +36,42 @@ public class GeneralInvoker {
     private Stopwatch stopwatch = Stopwatch.createUnstarted();
 
     public ResponseMsg invoke(RedMessage redMessage){
-        return invoke(redMessage,0);
+        try {
+            if (channel == null) {
+                stopwatch.start();
+                String ip ;
+                do {
+                    ip = getServiceIP(((RequestMsg) redMessage.getMessage()).getInstanceName());
+                    final String ip1 = ip;
+                    executorService.submit(new Runnable() {
+                        public void run() {
+                            connectToServer(ip1.split(":")[0], ip1.split(":")[1]);
+                        }
+                    });
+                    waitConnect.await();
+                }while(channel == null && ip != null);
+                stopwatch.stop();
+            }
+            //防止Netty没有连接成功
+            if(getChannel() != null) {
+                getChannel().writeAndFlush(redMessage);
+            }
+            long last = 0l;
+            waitResult.await();
+        }catch (Exception e){
+            System.out.println(e);
+            logger.error("fail!",e);
+            responseMsg.setReason(e.getMessage());
+            responseMsg.setInvokeSucess(Constants.invoke_fail);
+        }
+        return getResponseMsg();
     }
 
     public ResponseMsg invoke(RedMessage redMessage,long delays){
         try {
             if (channel == null) {
                 stopwatch.start();
-
-                String ip ;//= getServiceIP(((RequestMsg) redMessage.getMessage()).getInstanceName());
+                String ip ;
                 do {
                     ip = getServiceIP(((RequestMsg) redMessage.getMessage()).getInstanceName());
                     final String ip1 = ip;
@@ -63,16 +87,21 @@ public class GeneralInvoker {
             //防止Netty没有连接成功
             if(getChannel() != null) {
                 getChannel().writeAndFlush(redMessage);
-                //ToDo:定时发送PING确认保存的有效
             }
             long last = 0l;
             if((last = delays-stopwatch.elapsed(TimeUnit.SECONDS)) > 0){
                 waitResult.await(last ,TimeUnit.SECONDS);
+            }else{
+                ResponseMsg rsp = new ResponseMsg();
+                rsp.setInvokeSucess(Constants.invoke_timeout);
+                rsp.setReason("connect timeout");
+                return rsp;
             }
         }catch (Exception e){
-            //ToDo:一个IP连接超时需要尝试连接新的IP，getIP与connect结合起来变成循环
             System.out.println(e);
-            logger.error("connect to server fail!");
+            logger.error("fail!",e);
+            responseMsg.setReason(e.getMessage());
+            responseMsg.setInvokeSucess(Constants.invoke_fail);
         }
         return getResponseMsg();
     }
@@ -82,30 +111,17 @@ public class GeneralInvoker {
      * @throws Exception
      */
     private String getServiceIP(String instanceName) throws Exception{
-        //获取地址后需要向其注册Watcher
-//        ZooKeeper zooKeeper = new ZooKeeper("localhost:2181", 50000, new Watcher() {
-//            public void process(WatchedEvent watchedEvent) {
-//                if(Event.KeeperState.SyncConnected == watchedEvent.getState()){
-//                    if(Event.EventType.None == watchedEvent.getType()&&null == watchedEvent.getPath()) {
-//                        latch.countDown();
-//                        System.out.println("ZooKeeper connected");
-//                    }
-//                }
-//            }
-//        });
-//        latch.await();
         ZkClient zkClient = new ZkClient("localhost:2181",5000);
         String path = Constants.zk_root_path + Constants.separator +instanceName;
         List<String> ips =  zkClient.getChildren(path);
         if(ips == null || ips.isEmpty())
             return null;
-        //ToDo:没有负载均衡，请求会分布到同一台机器
-        //Do:socket建立成功到建立netty连接的过程中服务器断掉会导致调用直接返回,需要重新获取IP
         for(String ip:ips){
             if(PatternUtil.isIPv4Address(ip)){
                 //Socket可能会阻塞很长时间
                 if(PingUtil.isReachable(ip)){
                     zkClient.subscribeStateChanges(new IZkStateListener() {
+                        //通过在节点上注册Watcher代替Ping进行心跳检测
                         @Override
                         public void handleStateChanged(Watcher.Event.KeeperState keeperState) throws Exception {
                             if (keeperState == Watcher.Event.KeeperState.Disconnected) {
@@ -153,8 +169,6 @@ public class GeneralInvoker {
         }finally {
             group.shutdownGracefully();
         }
-
-        //心跳检测服务端是否有效，否则重新获取IP
     }
 
     public Channel getChannel() {
@@ -181,21 +195,4 @@ public class GeneralInvoker {
         return waitResult;
     }
 
-//    public void startHeartBeatTask(){
-//        Timer timer = new Timer();
-//        CyclicBarrier barrier = new CyclicBarrier(4, new Runnable() {
-//            @Override
-//            public void run() {
-//
-//            }
-//        });
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                RedMessage redMessage = new RedMessage(null,MessageType.PING);
-//                getChannel().writeAndFlush(redMessage);
-//
-//            }
-//        },60000l,60000l);
-//    }
 }

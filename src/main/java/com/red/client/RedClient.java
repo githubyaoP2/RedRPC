@@ -17,7 +17,6 @@ public class RedClient {
     private static Map<String,GeneralInvoker> connects = new HashMap<>();
     private static ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-    //ToDo:连接时间
     public static ResponseMsg executeSync(String instanceName, String methodName, Object... params){
         RequestMsg requestMsg = new RequestMsg();
         requestMsg.setInstanceName(instanceName);
@@ -26,15 +25,32 @@ public class RedClient {
         RedMessage redMessage = new RedMessage(requestMsg,MessageType.ClientRequest);
         ResponseMsg responseMsg = null;
         if(exist(instanceName)){
-            responseMsg = connects.get(instanceName).invoke(redMessage,100);
+            responseMsg = connects.get(instanceName).invoke(redMessage);
         }else {
             GeneralInvoker invoker = new GeneralInvoker();
-            responseMsg = invoker.invoke(redMessage,10);
+            responseMsg = invoker.invoke(redMessage);
             connects.put(instanceName,invoker);
-            //invoker.startHeartBeatTask();
         }
         return responseMsg;
     }
+
+    public static ResponseMsg executeSync(long delays,String instanceName, String methodName, Object... params){
+        RequestMsg requestMsg = new RequestMsg();
+        requestMsg.setInstanceName(instanceName);
+        requestMsg.setMethodName(methodName);
+        requestMsg.setArgs(params);
+        RedMessage redMessage = new RedMessage(requestMsg,MessageType.ClientRequest);
+        ResponseMsg responseMsg = null;
+        if(exist(instanceName)){
+            responseMsg = connects.get(instanceName).invoke(redMessage,delays);
+        }else {
+            GeneralInvoker invoker = new GeneralInvoker();
+            responseMsg = invoker.invoke(redMessage);
+            connects.put(instanceName,invoker);
+        }
+        return responseMsg;
+    }
+
     public static Future<ResponseMsg> executeAsync(String instanceName, String methodName, Object... params){
         RequestMsg requestMsg = new RequestMsg();
         requestMsg.setInstanceName(instanceName);

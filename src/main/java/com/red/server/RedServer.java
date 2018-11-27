@@ -101,28 +101,9 @@ public class RedServer {
     }
 
     //写入ZooKeeper
-    //ToDo: Constants.separator 用操作系统无关的分隔符代替
     //ToDO: 删除服务节点事件应与主线程隔离，否则主线程意外中断，服务节点无法删除
     private static void writeToZK(){
         try {
-//            ZooKeeper zooKeeper = new ZooKeeper("localhost:2181", 5000, new Watcher() {
-//                public void process(WatchedEvent watchedEvent) {
-//                    if(Event.KeeperState.SyncConnected == watchedEvent.getState()){
-//                        latch.countDown();
-//                    }
-//                }
-//            });
-//            //切换为IP权限模式，每个IP只能修改对应子节点
-//            zooKeeper.addAuthInfo("digest","foo:true".getBytes());
-//            String IP = Inet4Address.getLocalHost().getHostAddress();
-//            latch.await();
-//            serviceMap.forEach((instanceName,implName)->{
-//                try {
-//                    zooKeeper.create(Constants.zk_root_path + instanceName+Constants.separator+IP+":8081", IP.getBytes(), ZooDefs.Ids.CREATOR_ALL_ACL, CreateMode.PERSISTENT);
-//                }catch (Exception e){
-//                    System.out.println(e);
-//                }
-//            });
             ZkClient zkClient = new ZkClient("localhost:2181",5000);
             if(!zkClient.exists(Constants.zk_root_path )){
                 zkClient.createPersistent(Constants.zk_root_path,true);

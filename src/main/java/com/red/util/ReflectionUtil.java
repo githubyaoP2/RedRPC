@@ -4,14 +4,9 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ReflectionUtil {
-    //ToDo:加载配置文件时验证对应实体类是否存在对应方法
-    public static boolean validate(){
-        return true;
-    }
 
     public static Class[] getClassType(Object... args){
         Class[] var1 = new Class[args.length];

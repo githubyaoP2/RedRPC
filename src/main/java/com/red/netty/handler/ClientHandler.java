@@ -50,6 +50,6 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     private void executeAck(){
-        //ToDO:新启线程循环接收ACK，没收到栅栏-1并迅速重新发送PING，栅栏设置为5，重连5次失败后从缓存map中清除
+
     }
 }
