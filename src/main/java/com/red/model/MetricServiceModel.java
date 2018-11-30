@@ -1,9 +1,9 @@
-package com.red.metrics;
+package com.red.model;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class InvokerModel {
+public class MetricServiceModel {
     private String instanceName;
     private String methodName;
     private AtomicInteger invokeCount = new AtomicInteger(0);
@@ -14,7 +14,7 @@ public class InvokerModel {
     private AtomicLong timeOutMin = new AtomicLong(0);
     private AtomicLong timeOutMax = new AtomicLong(0);
 
-    public InvokerModel(String instanceName, String methodName) {
+    public MetricServiceModel(String instanceName, String methodName) {
         this.instanceName = instanceName;
         this.methodName = methodName;
     }

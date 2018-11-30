@@ -3,7 +3,8 @@ package com.red.server;
 import com.red.message.MessageType;
 import com.red.message.RedMessage;
 import com.red.message.ResponseMsg;
-import com.red.metrics.InvokerModel;
+import com.red.model.MetricModel;
+import com.red.model.MetricServiceModel;
 import com.red.util.Constants;
 import com.red.util.ReflectionUtil;
 import net.sf.cglib.proxy.Enhancer;
@@ -13,11 +14,15 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class ServerInvoker implements MethodInterceptor {
 
-    private static Map<String,InvokerModel> invokerMap = new ConcurrentHashMap<>();
+    private static Map<String,MetricServiceModel> invokerMap = new ConcurrentHashMap<>();
 
+    private ExecutorService executorService = Executors.newCachedThreadPool();
     private String instanceName;
     private String methodName;
     private Object[] args;
@@ -57,17 +62,26 @@ public class ServerInvoker implements MethodInterceptor {
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         String name = instanceName+"."+methodName;
-        InvokerModel invokerModel = null;
-        if((invokerModel = invokerMap.get(name)) == null) {
-            invokerModel = new InvokerModel(instanceName, methodName);
-            invokerMap.putIfAbsent(name,invokerModel);
+        MetricServiceModel metricServiceModel = null;
+        if((metricServiceModel = invokerMap.get(name)) == null) {
+            metricServiceModel = new MetricServiceModel(instanceName, methodName);
+            invokerMap.putIfAbsent(name, metricServiceModel);
         }
         try {
-            Object result = methodProxy.invokeSuper(o, args);
-            invokerModel.getSuccCount().incrementAndGet();
+//            Future future = executorService.submit(()->{
+//                try {
+                    Object result = methodProxy.invokeSuper(o, args);
+//                    return result;
+//                }catch (Exception e){
+//                    throw new RunTimeException();
+//                }
+//            });
+
+            metricServiceModel.getInvokeCount().incrementAndGet();
+            metricServiceModel.getSuccCount().incrementAndGet();
             return result;
         }catch (Exception e){
-            invokerModel.getFailCount().incrementAndGet();
+            metricServiceModel.getFailCount().incrementAndGet();
         }
         return null;
     }

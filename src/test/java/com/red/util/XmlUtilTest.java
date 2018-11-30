@@ -1,7 +1,7 @@
 package com.red.util;
 
-import com.red.Model.ServiceModel;
-import com.red.Model.ServicesModel;
+import com.red.model.ServiceModel;
+import com.red.model.ServicesModel;
 import org.junit.Test;
 
 import java.util.ArrayList;

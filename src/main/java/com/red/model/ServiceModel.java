@@ -1,4 +1,4 @@
-package com.red.Model;
+package com.red.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

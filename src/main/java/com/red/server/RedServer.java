@@ -1,7 +1,7 @@
 package com.red.server;
 
-import com.red.Model.ServiceModel;
-import com.red.Model.ServicesModel;
+import com.red.model.ServiceModel;
+import com.red.model.ServicesModel;
 import com.red.netty.handler.ServerHandler;
 import com.red.util.Constants;
 import com.red.util.ReflectionUtil;
@@ -19,7 +19,6 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.ZkClient;
 import org.apache.log4j.Logger;
-import org.apache.zookeeper.*;
 
 import java.net.Inet4Address;
 import java.util.HashMap;

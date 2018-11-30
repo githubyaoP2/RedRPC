@@ -1,17 +1,13 @@
 package com.red.util;
 
-import com.red.Model.ServiceModel;
-import com.red.Model.ServicesModel;
-import com.sun.jmx.remote.internal.Unmarshal;
+import com.red.model.ServiceModel;
+import com.red.model.ServicesModel;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
 
 public class XmlUtil {
     public static ServicesModel getServiceFromXml(String filepath){
