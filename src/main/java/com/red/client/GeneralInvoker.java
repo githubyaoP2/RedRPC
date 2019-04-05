@@ -162,12 +162,12 @@ public class GeneralInvoker {
                             channel.pipeline().addLast(new ClientHandler(generalInvoker));
                         }
                     });
-            ChannelFuture channelFuture = bootstrap.connect(ip, Integer.valueOf(port));
-            channelFuture.channel().closeFuture().sync();
+            ChannelFuture channelFuture = bootstrap.connect(ip, Integer.valueOf(port)).sync();
+//            channelFuture.channel().closeFuture().sync();
         }catch (Exception e){
 
         }finally {
-            group.shutdownGracefully();
+//            group.shutdownGracefully();
         }
     }
 
