@@ -45,4 +45,8 @@ public class Cluster {
     public void setRefererList(List<Referer> refererList) {
         this.refererList = refererList;
     }
+
+    public void addReferer(Referer referer){
+        refererList.add(referer);
+    }
 }

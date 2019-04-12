@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61ee083b-8309-4b2c-8d96-d355102e4d09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,14 +47,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DefaultClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+            <state relative-caret-position="1300">
+              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="75">
+                <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -180,7 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Problem.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/red/metrics/HtmlGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/red/netty/handler/MetricHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/red/client/RedClient.java" />
@@ -231,6 +240,7 @@
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/InterfaceConfig.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/util/Constants.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -272,7 +282,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-4" />
     <option name="y" value="-4" />
     <option name="width" value="1374" />
@@ -293,156 +303,6 @@
             <path>
               <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
               <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="cluster" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="cluster" type="462c0819:PsiDirectoryNode" />
-              <item name="ha" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="netty" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="transport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="red" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="red" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="red" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -674,7 +534,7 @@
       <workItem from="1551250410496" duration="19512000" />
       <workItem from="1554443816328" duration="24739000" />
       <workItem from="1554721264680" duration="8918000" />
-      <workItem from="1554961802535" duration="583000" />
+      <workItem from="1554961802535" duration="1208000" />
     </task>
     <task id="LOCAL-00001" summary="修正到可以运行">
       <created>1543289857489</created>
@@ -719,7 +579,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234753000" />
+    <option name="totallyTimeSpent" value="235378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -731,7 +591,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1374" height="724" extended-state="7" />
+    <frame x="-4" y="-4" width="1374" height="724" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
@@ -745,12 +605,12 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5355286" />
       <window_info anchor="bottom" id="Sequence" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.119584054" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.090121314" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46793762" visible="true" weight="0.07703927" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46857142" visible="true" weight="0.17749244" />
       <window_info anchor="right" id="Database" order="7" />
-      <window_info id="Structure" order="1" sideWeight="0.5320624" side_tool="true" visible="true" weight="0.07703927" />
+      <window_info id="Structure" order="1" sideWeight="0.5314286" side_tool="true" visible="true" weight="0.17749244" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
@@ -889,13 +749,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/red/server/RedServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="92" column="42" selection-start-line="67" selection-start-column="8" selection-end-line="92" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/ServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1273,11 +1126,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+        <state relative-caret-position="1300">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
