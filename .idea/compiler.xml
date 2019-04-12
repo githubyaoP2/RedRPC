@@ -6,8 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="RedRPC" />
+        <module name="red-benchmark" />
+        <module name="red-core" />
+        <module name="red-demo" />
+        <module name="red-extension" />
+        <module name="red-manager" />
+        <module name="red-registry-zookeeper" />
+        <module name="red-spring" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
   </component>
 </project>

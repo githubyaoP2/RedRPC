@@ -6,7 +6,17 @@
 
     <groupId>com.wheel.fast</groupId>
     <artifactId>RedRPC</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>red-core</module>
+        <module>red-manager</module>
+        <module>red-registry-zookeeper</module>
+        <module>red-spring</module>
+        <module>red-benchmark</module>
+        <module>red-demo</module>
+        <module>red-extension</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -46,5 +56,19 @@
             <version>19.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
