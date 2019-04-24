@@ -13,6 +13,11 @@ public class Cluster {
     LoadBalance loadBalance;
     List<Referer> refererList;
 
+    public Cluster(HaStrategy haStrategy, LoadBalance loadBalance) {
+        this.haStrategy = haStrategy;
+        this.loadBalance = loadBalance;
+    }
+
     public Response call(Request request){
        return haStrategy.call(request,loadBalance);
     }

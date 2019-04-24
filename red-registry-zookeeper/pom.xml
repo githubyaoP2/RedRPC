@@ -11,5 +11,7 @@
 
     <artifactId>red-registry-zookeeper</artifactId>
 
+    <dependencies>
 
+    </dependencies>
 </project>
