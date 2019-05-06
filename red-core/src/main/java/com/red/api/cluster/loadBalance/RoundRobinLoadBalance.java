@@ -5,14 +5,7 @@ import com.red.api.rpc.Request;
 
 import java.util.List;
 
-public class ConsistentHashLoadBalance extends LoadBalance{
-
-
-
-    @Override
-    public void onRefresh(List<Referer> referers) {
-
-    }
+public class RoundRobinLoadBalance extends LoadBalance{
 
     @Override
     public Referer select(Request request) {

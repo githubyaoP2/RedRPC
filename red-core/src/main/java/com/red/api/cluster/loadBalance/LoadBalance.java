@@ -5,11 +5,15 @@ import com.red.api.rpc.Request;
 
 import java.util.List;
 
-public interface LoadBalance {
-    void onRefresh(List<Referer> referers);
+public abstract class LoadBalance {
+    public List<Referer> referers;
 
-    Referer select(Request request);
+    public void onRefresh(List<Referer> referers) {
+        this.referers = referers;
+    }
 
-    void selectToHolder(Request request, List<Referer> refersHolder);
+    abstract Referer select(Request request);
+
+    abstract void selectToHolder(Request request, List<Referer> refersHolder);
 
 }

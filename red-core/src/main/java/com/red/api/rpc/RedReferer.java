@@ -70,4 +70,14 @@ public class RedReferer extends Referer{
             });
         }
     }
+
+    @Override
+    public boolean isAvailable() {
+        return false;
+    }
+
+    @Override
+    int activeRefererCount() {
+        return 0;
+    }
 }
