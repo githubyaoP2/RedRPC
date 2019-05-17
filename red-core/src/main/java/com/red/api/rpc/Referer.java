@@ -18,4 +18,7 @@ public abstract class Referer {
     public abstract int activeRefererCount();
 
     public abstract String getUrl();
+
+    public abstract String getGroup();
+
 }

@@ -77,7 +77,17 @@ public class RedReferer extends Referer{
     }
 
     @Override
-    int activeRefererCount() {
+    public int activeRefererCount() {
         return 0;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    @Override
+    public String getGroup() {
+        return null;
     }
 }
