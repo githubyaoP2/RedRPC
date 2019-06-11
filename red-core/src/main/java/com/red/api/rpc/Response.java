@@ -2,6 +2,7 @@ package com.red.api.rpc;
 
 import java.util.Map;
 
+//响应报文
 public class Response implements RedMessage{
     private Object value;
     private Exception exception;

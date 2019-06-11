@@ -7,6 +7,11 @@ import com.red.api.rpc.Request;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * 负载均衡策略--
+ *
+ * 随机选择
+ */
 public class RandomLoadBalance extends LoadBalance{
 
 

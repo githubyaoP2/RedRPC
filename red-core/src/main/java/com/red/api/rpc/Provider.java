@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//服务提供类
 public class Provider<T> {
 
     public Provider(Class implClass, List<MethodConfig> methodConfigList){

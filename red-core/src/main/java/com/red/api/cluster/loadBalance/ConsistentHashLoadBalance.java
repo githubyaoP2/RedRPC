@@ -9,6 +9,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 负载均衡恶略 --
+ * 一致性hash负载均衡
+ */
 public class ConsistentHashLoadBalance extends LoadBalance{
 
     private static int loop = 1000;
@@ -18,9 +22,9 @@ public class ConsistentHashLoadBalance extends LoadBalance{
     public void onRefresh(List<Referer> referers) {
         super.onRefresh(referers);
         List<Referer> copyReferers = new ArrayList<>(referers);
-        List<Referer> tmpReferers = new ArrayList<>();
+        List<Referer> tmpReferers = new ArrayList<>();//虚拟节点
         for(int i=0; i<loop; i++){
-            Collections.shuffle(copyReferers);
+            Collections.shuffle(copyReferers);//随机排序
             for(Referer ref:copyReferers){
                 tmpReferers.add(ref);
             }

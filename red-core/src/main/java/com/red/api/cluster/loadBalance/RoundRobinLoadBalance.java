@@ -6,6 +6,10 @@ import com.red.api.rpc.Request;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 负载均衡策略--
+ * 循环选择
+ */
 public class RoundRobinLoadBalance extends LoadBalance{
 
     public static final int MAX_REFERER_COUNT = 10;

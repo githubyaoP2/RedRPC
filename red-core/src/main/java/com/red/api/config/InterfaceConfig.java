@@ -9,7 +9,7 @@ public class InterfaceConfig extends AbstractConfig{
     //注册中心列表
     protected List<RegistryConfig> registryConfigList;
 
-    //分组,客户端可陪多个分组，服务端只能以一个分组发布
+    //分组,客户端可配置多个分组，服务端只能以一个分组发布
     protected String group;
 
     //版本

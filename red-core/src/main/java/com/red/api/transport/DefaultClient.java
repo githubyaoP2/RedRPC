@@ -32,7 +32,8 @@ public class DefaultClient<T> {
         String interfaceName = clientConfig.getInterfaceClass().getName();
         List<String> urls = discoverCommand(group,interfaceName);
         if(urls.isEmpty()){
-            urls = discoverService(group,interfaceName);
+            urls = discoverService(
+                    group,interfaceName);
         }
         for(String url:urls){
             Referer referer = new RedReferer(url,protocolConfig);
@@ -46,6 +47,12 @@ public class DefaultClient<T> {
         return (T)Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{clientConfig.getInterfaceClass()},new ClientInvocationHandler(cluster));
     }
 
+    /**
+     * 从配置命令节点找到对应的分组权重配置
+     * @param group
+     * @param interfaceName
+     * @return
+     */
     public List<String> discoverCommand(String group,String interfaceName){
         String url = Constants.project+Constants.separator+group+Constants.separator+interfaceName+Constants.separator+Constants.command;
         List<RegistryConfig> registryConfigList = clientConfig.getRegistryConfigList();
@@ -68,7 +75,14 @@ public class DefaultClient<T> {
         return null;
     }
 
+    /**
+     * 解析权重配置策略
+     * @param command
+     * @return
+     */
     private List<String> parseCommand(String command){
+        String[] commands = command.split(Constants.spliter);
+        //commands[0]
         return null;
     }
 

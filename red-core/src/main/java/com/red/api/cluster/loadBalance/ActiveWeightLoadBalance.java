@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
+/**
+ * 负载均衡策略 --
+ * 选取目前调用量最少的Referer
+ */
 public class ActiveWeightLoadBalance extends LoadBalance{
 
     /*

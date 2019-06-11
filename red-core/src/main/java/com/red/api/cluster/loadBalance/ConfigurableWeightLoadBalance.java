@@ -9,6 +9,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * 负载均衡策略 --
+ * 权重可配置，在调用方访问注册服务中心对应节点之前优先访问策略路径下的数据
  * 这里配置的权重是针对组的权重，组内是轮流的
  */
 public class ConfigurableWeightLoadBalance extends LoadBalance{

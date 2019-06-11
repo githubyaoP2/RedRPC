@@ -4,6 +4,9 @@ import com.red.api.cluster.loadBalance.LoadBalance;
 import com.red.api.rpc.Request;
 import com.red.api.rpc.Response;
 
+/**
+ * 高可用策略，循环调用
+ */
 public class FailOverHaStrategy implements HaStrategy{
     @Override
     public Response call(Request request, LoadBalance loadBalance) {

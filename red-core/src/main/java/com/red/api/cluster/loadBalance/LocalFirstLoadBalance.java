@@ -12,6 +12,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * 负载均衡策略--
+ * 本地优先
+ */
 public class LocalFirstLoadBalance extends LoadBalance{
     public static final int MAX_REFERER_COUNT = 10;
 

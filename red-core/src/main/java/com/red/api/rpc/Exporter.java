@@ -18,6 +18,7 @@ import io.netty.handler.codec.serialization.ObjectEncoder;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+//发布服务类
 public class Exporter {
 
     Provider provider;
@@ -38,22 +39,22 @@ public class Exporter {
         if(exported.get())
             return true;
         synchronized (this) {
-            for (ProtocolConfig protocolConfig : serviceConfig.getProtocolConfigList()) {
-                Integer port = serviceConfig.getPort(protocolConfig.getName());
-                receiveGroup = new NioEventLoopGroup();
-                ioGroup = new NioEventLoopGroup(protocolConfig.getIothreads());
-                ServerBootstrap serverBootstrap = new ServerBootstrap();
-                serverBootstrap.group(receiveGroup, ioGroup)
-                        .channel(NioServerSocketChannel.class)
-                        .childHandler(new ChannelInitializer<SocketChannel>() {
-                            protected void initChannel(SocketChannel channel) throws Exception {
-                                channel.pipeline().addLast(new ServerGuard());
-                            }
-                        });
-                ChannelFuture future = serverBootstrap.bind(port).syncUninterruptibly();
-                channel = future.channel();
-                exported.compareAndSet(false,true);
-            }
+//            for (ProtocolConfig protocolConfig : serviceConfig.getProtocolConfigList()) {
+//                Integer port = serviceConfig.getPort(protocolConfig.getName());
+//                receiveGroup = new NioEventLoopGroup();
+//                ioGroup = new NioEventLoopGroup(protocolConfig.getIothreads());
+//                ServerBootstrap serverBootstrap = new ServerBootstrap();
+//                serverBootstrap.group(receiveGroup, ioGroup)
+//                        .channel(NioServerSocketChannel.class)
+//                        .childHandler(new ChannelInitializer<SocketChannel>() {
+//                            protected void initChannel(SocketChannel channel) throws Exception {
+//                                channel.pipeline().addLast(new ServerGuard());
+//                            }
+//                        });
+//                ChannelFuture future = serverBootstrap.bind(port).syncUninterruptibly();
+//                channel = future.channel();
+//                exported.compareAndSet(false,true);
+//            }
         }
         return false;
     }

@@ -6,11 +6,12 @@ public class ClientConfig<T> extends InterfaceConfig{
 
     //服务端可以同时以多种协议暴露，客户端只能用一种来访问
     protected ProtocolConfig protocolConfig;
-    private Class<T> interfaceClass;
 
-    private String haStrategy;
+    private Class<T> interfaceClass;//调用的接口
 
-    private String loadBalance;
+    private String haStrategy;//高可用策略
+
+    private String loadBalance;//负载均衡策略
 
     public ProtocolConfig getProtocolConfig() {
         return protocolConfig;
