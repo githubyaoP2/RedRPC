@@ -10,7 +10,7 @@ public class LoggerUtil {
 
     public static void info(Method method,String message){}
     public static void info(String message){}
-    public static void error(Method method,String message){}
-    public static void warn(Method method,String message){}
+    public static void error(String message){}
+    public static void warn(String message){}
 
 }

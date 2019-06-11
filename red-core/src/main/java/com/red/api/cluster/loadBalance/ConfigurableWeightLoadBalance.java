@@ -1,7 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
 import com.red.api.rpc.Referer;
-import com.red.api.rpc.Request;
+import com.red.api.message.Request;
 import io.netty.util.internal.StringUtil;
 
 import java.util.*;

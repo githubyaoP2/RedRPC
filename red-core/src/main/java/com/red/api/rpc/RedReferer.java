@@ -18,7 +18,7 @@ import io.netty.util.concurrent.GenericFutureListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RedReferer extends Referer{
+public class RedReferer implements Referer{
 
     String url;
     ProtocolConfig protocolConfig;

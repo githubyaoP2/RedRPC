@@ -32,8 +32,7 @@ public class DefaultClient<T> {
         String interfaceName = clientConfig.getInterfaceClass().getName();
         List<String> urls = discoverCommand(group,interfaceName);
         if(urls.isEmpty()){
-            urls = discoverService(
-                    group,interfaceName);
+            urls = discoverService(group,interfaceName);
         }
         for(String url:urls){
             Referer referer = new RedReferer(url,protocolConfig);
@@ -86,6 +85,7 @@ public class DefaultClient<T> {
         return null;
     }
 
+    //服务发现
     public List<String> discoverService(String group,String interfaceName){
         String url = Constants.project+Constants.separator+group+Constants.separator+interfaceName+Constants.separator+Constants.server+Constants.separator;
         List<RegistryConfig> registryConfigList = clientConfig.getRegistryConfigList();

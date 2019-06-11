@@ -1,8 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
 import com.red.api.rpc.Referer;
-import com.red.api.rpc.Request;
-import com.red.api.util.LoggerUtil;
+import com.red.api.message.Request;
 
 import java.net.Inet4Address;
 import java.net.UnknownHostException;

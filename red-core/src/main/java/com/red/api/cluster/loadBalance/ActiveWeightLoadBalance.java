@@ -2,13 +2,12 @@ package com.red.api.cluster.loadBalance;
 
 import com.red.api.exception.RedServiceException;
 import com.red.api.rpc.Referer;
-import com.red.api.rpc.Request;
+import com.red.api.message.Request;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
 
 /**
  * 负载均衡策略 --

@@ -1,4 +1,4 @@
-package com.red.api.rpc;
+package com.red.api.message;
 
 import java.util.Map;
 

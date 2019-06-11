@@ -10,16 +10,16 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 //服务调用类
-public abstract class Referer {
+public interface Referer {
 
-    public abstract void init();
+    void init();
 
-    public abstract boolean isAvailable();
+    boolean isAvailable();
 
-    public abstract int activeRefererCount();
+    int activeRefererCount();
 
-    public abstract String getUrl();
+    String getUrl();
 
-    public abstract String getGroup();
+    String getGroup();
 
 }

@@ -1,6 +1,6 @@
 package com.red.api.netty.codec;
 
-import com.red.api.rpc.Response;
+import com.red.api.message.Response;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

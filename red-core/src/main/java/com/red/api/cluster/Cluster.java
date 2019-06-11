@@ -3,8 +3,8 @@ package com.red.api.cluster;
 import com.red.api.cluster.ha.HaStrategy;
 import com.red.api.cluster.loadBalance.LoadBalance;
 import com.red.api.rpc.Referer;
-import com.red.api.rpc.Request;
-import com.red.api.rpc.Response;
+import com.red.api.message.Request;
+import com.red.api.message.Response;
 
 import java.util.List;
 
