@@ -1,7 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
+import com.red.api.message.RequestMessage;
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,8 +32,8 @@ public class ConsistentHashLoadBalance extends LoadBalance{
     }
 
     @Override
-    public Referer select(Request request) {
-        int hash = getHash(request);
+    public Referer select(RequestMessage requestMessage) {
+        int hash = getHash(requestMessage);
         for(int i=0; i<referers.size(); i++){
             Referer ref = consistentHashReferers.get((hash+i)%consistentHashReferers.size());
             if(ref.isAvailable()){
@@ -44,10 +44,10 @@ public class ConsistentHashLoadBalance extends LoadBalance{
     }
 
     @Override
-    public void selectToHolder(Request request, List<Referer> refersHolder) {
+    public void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
         List<Referer> referers = this.referers;
 
-        int hash = getHash(request);
+        int hash = getHash(requestMessage);
         for(int i=0; i<referers.size(); i++){
             Referer ref = consistentHashReferers.get((hash+i)%consistentHashReferers.size());
             if(ref.isAvailable()){
@@ -56,12 +56,12 @@ public class ConsistentHashLoadBalance extends LoadBalance{
 
         }    }
 
-    private int getHash(Request request){
+    private int getHash(RequestMessage requestMessage){
         int hashCode;
-        if(request.getArguments() == null || request.getArguments().length == 0){
-            hashCode = request.hashCode();
+        if(requestMessage.getArguments() == null || requestMessage.getArguments().length == 0){
+            hashCode = requestMessage.hashCode();
         }else {
-            hashCode = Arrays.hashCode(request.getArguments());
+            hashCode = Arrays.hashCode(requestMessage.getArguments());
         }
         return 0x7fffffff & hashCode;
     }

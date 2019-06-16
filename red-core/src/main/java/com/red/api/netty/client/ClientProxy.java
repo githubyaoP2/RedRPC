@@ -1,4 +1,4 @@
-package com.red.api.netty;
+package com.red.api.netty.client;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

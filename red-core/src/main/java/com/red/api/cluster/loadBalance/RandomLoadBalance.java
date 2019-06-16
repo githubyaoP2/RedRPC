@@ -1,8 +1,8 @@
 package com.red.api.cluster.loadBalance;
 
 import com.red.api.exception.RedServiceException;
+import com.red.api.message.RequestMessage;
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,10 +16,10 @@ public class RandomLoadBalance extends LoadBalance{
 
 
     @Override
-    public Referer select(Request request) {
+    public Referer select(RequestMessage requestMessage) {
         List<Referer> referers = this.referers;
         if(referers == null){
-            throw new RedServiceException("No available referers for call request");
+            throw new RedServiceException("No available referers for call requestMessage");
         }
         Referer referer = null;
         if(referers.size() == 1){
@@ -34,10 +34,10 @@ public class RandomLoadBalance extends LoadBalance{
     }
 
     @Override
-    public void selectToHolder(Request request, List<Referer> refersHolder) {
+    public void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
         List<Referer> referers = this.referers;
         if(referers == null){
-            throw new RedServiceException("No available referers for call request");
+            throw new RedServiceException("No available referers for call requestMessage");
         }
 
         if(referers.size() == 1 && referers.get(0).isAvailable()){

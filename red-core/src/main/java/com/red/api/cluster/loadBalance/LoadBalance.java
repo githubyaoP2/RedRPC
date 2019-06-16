@@ -1,7 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
+import com.red.api.message.RequestMessage;
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ public abstract class LoadBalance {
         this.referers = referers;
     }
 
-    abstract Referer select(Request request);
+    abstract Referer select(RequestMessage requestMessage);
 
-    abstract void selectToHolder(Request request, List<Referer> refersHolder);
+    abstract void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder);
 
 }

@@ -1,7 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
+import com.red.api.message.RequestMessage;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -16,7 +16,7 @@ public class RoundRobinLoadBalance extends LoadBalance{
     private AtomicInteger idx = new AtomicInteger(0);
 
     @Override
-    public Referer select(Request request) {
+    public Referer select(RequestMessage requestMessage) {
         List<Referer> referers = this.referers;
 
         int index = idx.incrementAndGet();
@@ -30,7 +30,7 @@ public class RoundRobinLoadBalance extends LoadBalance{
     }
 
     @Override
-    public void selectToHolder(Request request, List<Referer> refersHolder) {
+    public void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
         List<Referer> referers = this.referers;
         int index = idx.incrementAndGet();
         for(int i = 0,count = 0; i<referers.size() && count<MAX_REFERER_COUNT; i++){

@@ -2,9 +2,9 @@ package com.red.api.cluster;
 
 import com.red.api.cluster.ha.HaStrategy;
 import com.red.api.cluster.loadBalance.LoadBalance;
+import com.red.api.message.RequestMessage;
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
-import com.red.api.message.Response;
+import com.red.api.message.ResponseMessage;
 
 import java.util.List;
 
@@ -18,8 +18,8 @@ public class Cluster {
         this.loadBalance = loadBalance;
     }
 
-    public Response call(Request request){
-       return haStrategy.call(request,loadBalance);
+    public ResponseMessage call(RequestMessage requestMessage){
+       return haStrategy.call(requestMessage,loadBalance);
     }
 
     //刷新集群

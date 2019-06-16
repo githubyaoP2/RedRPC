@@ -1,9 +1,9 @@
 package com.red.api.rpc;
 
 import com.red.api.config.ProtocolConfig;
-import com.red.api.netty.ClientHandler;
 import com.red.api.netty.codec.RedDecoder;
 import com.red.api.netty.codec.RedEncoder;
+import com.red.api.netty.handler.RedMessageHandler;
 import com.red.api.transport.Channel;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -12,7 +12,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.MessageToByteEncoder;
-import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 
 import java.util.ArrayList;
@@ -23,6 +22,7 @@ public class RedReferer implements Referer{
     String url;
     ProtocolConfig protocolConfig;
     Bootstrap bootstrap;
+    NioEventLoopGroup nioEventLoopGroup;
     List<Channel> channelList = new ArrayList<>();
 
     public RedReferer(String url, ProtocolConfig protocolConfig) {
@@ -32,7 +32,7 @@ public class RedReferer implements Referer{
 
     @Override
     public void init() {
-        NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(protocolConfig.getIothreads());
+        nioEventLoopGroup = new NioEventLoopGroup(protocolConfig.getIothreads());
         bootstrap = new Bootstrap();
         MessageToByteEncoder redEncoder;// = new RedEncoder(protocolConfig.getSerialization());
         ByteToMessageDecoder redDecoder;// = new RedDecoder(protocolConfig.getSerialization());
@@ -46,7 +46,7 @@ public class RedReferer implements Referer{
                 redEncoder = new RedEncoder(protocolConfig.getSerialization());
                 redDecoder = new RedDecoder(protocolConfig.getSerialization());
         }
-        ClientHandler clientHandler = new ClientHandler();
+        RedMessageHandler redMessageHandler = new RedMessageHandler();
         bootstrap.group(nioEventLoopGroup).
                 channel(NioSocketChannel.class).
                 handler(new ChannelInitializer<NioSocketChannel>() {
@@ -54,7 +54,7 @@ public class RedReferer implements Referer{
                     protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
                         nioSocketChannel.pipeline().addLast(redDecoder);
                         nioSocketChannel.pipeline().addLast(redEncoder);
-                        nioSocketChannel.pipeline().addLast(clientHandler);
+                        nioSocketChannel.pipeline().addLast(redMessageHandler);
                     }
                 });
     }

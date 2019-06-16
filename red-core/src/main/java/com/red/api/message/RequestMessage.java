@@ -5,7 +5,7 @@ import com.red.api.rpc.RedVersion;
 import java.util.Map;
 
 //请求报文
-public class Request implements RedMessage{
+public class RequestMessage implements RedMessage{
     private String intefaceName;
     private String methodName;
     private Object[] arguments;

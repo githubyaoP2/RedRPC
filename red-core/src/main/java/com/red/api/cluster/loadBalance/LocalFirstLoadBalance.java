@@ -1,7 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
+import com.red.api.message.RequestMessage;
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
 
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
@@ -19,7 +19,7 @@ public class LocalFirstLoadBalance extends LoadBalance{
     public static final int MAX_REFERER_COUNT = 10;
 
     @Override
-    public Referer select(Request request) {
+    public Referer select(RequestMessage requestMessage) {
         List<Referer> referers = this.referers;
         List<Referer> local = null;
         try {
@@ -49,7 +49,7 @@ public class LocalFirstLoadBalance extends LoadBalance{
     }
 
     @Override
-    public void selectToHolder(Request request, List<Referer> refersHolder) {
+    public void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
         List<Referer> referers = this.referers;
 
         List<Referer> local = null;

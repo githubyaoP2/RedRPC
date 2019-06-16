@@ -7,24 +7,16 @@ import java.util.Map;
 public class ServiceConfig<T> extends InterfaceConfig{
 
     //服务端可以同时以多种协议暴露，客户端只能用一种来访问
-    protected List<ProtocolConfig> protocolConfigList;
+    protected ProtocolConfig protocolConfig;
 
     private Class<T> interfaceClass;
 
-    private Class<T> implClass;
+    private T implClass;
 
     private List<MethodConfig> methodConfigList;
 
     //protocol1:port1,protocol2:port2
-    private Map<String,Integer> export = new HashMap<String, Integer>();
-
-    public Integer getPort(String protocol){
-        return export.get(protocol);
-    }
-
-    public void addProtocol(String protocol,Integer port){
-        export.put(protocol,port);
-    }
+    private String port;
 
     public Class<T> getInterfaceClass() {
         return interfaceClass;
@@ -34,11 +26,11 @@ public class ServiceConfig<T> extends InterfaceConfig{
         this.interfaceClass = interfaceClass;
     }
 
-    public Class<T> getImplClass() {
+    public T getImplClass() {
         return implClass;
     }
 
-    public void setImplClass(Class<T> implClass) {
+    public void setImplClass(T implClass) {
         this.implClass = implClass;
     }
 
@@ -50,19 +42,19 @@ public class ServiceConfig<T> extends InterfaceConfig{
         this.methodConfigList = methodConfigList;
     }
 
-    public List<ProtocolConfig> getProtocolConfigList() {
-        return protocolConfigList;
+    public ProtocolConfig getProtocolConfig() {
+        return protocolConfig;
     }
 
-    public void setProtocolConfigList(List<ProtocolConfig> protocolConfigList) {
-        this.protocolConfigList = protocolConfigList;
+    public void setProtocolConfig(ProtocolConfig protocolConfig) {
+        this.protocolConfig = protocolConfig;
     }
 
-    public Map<String, Integer> getExport() {
-        return export;
+    public String getPort() {
+        return port;
     }
 
-    public void setExport(Map<String, Integer> export) {
-        this.export = export;
+    public void setPort(String port) {
+        this.port = port;
     }
 }

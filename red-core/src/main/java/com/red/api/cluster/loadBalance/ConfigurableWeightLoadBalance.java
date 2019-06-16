@@ -1,7 +1,7 @@
 package com.red.api.cluster.loadBalance;
 
+import com.red.api.message.RequestMessage;
 import com.red.api.rpc.Referer;
-import com.red.api.message.Request;
 import io.netty.util.internal.StringUtil;
 
 import java.util.*;
@@ -34,7 +34,7 @@ public class ConfigurableWeightLoadBalance extends LoadBalance{
     }
 
     @Override
-    Referer select(Request request) {
+    Referer select(RequestMessage requestMessage) {
         if(holder == emptyHolder)
             return null;
         RefererListCacheHolder h = this.holder;
@@ -55,7 +55,7 @@ public class ConfigurableWeightLoadBalance extends LoadBalance{
     }
 
     @Override
-    void selectToHolder(Request request, List<Referer> refersHolder) {
+    void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
 
     }
 

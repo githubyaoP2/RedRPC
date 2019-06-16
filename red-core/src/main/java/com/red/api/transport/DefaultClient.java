@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class DefaultClient<T> {
+public class DefaultClient<T> implements Client<T>{
 
     private AtomicBoolean inited = new AtomicBoolean(false);
     private ClientConfig<T> clientConfig;
@@ -42,6 +42,7 @@ public class DefaultClient<T> {
         register();
     }
 
+    @Override
     public T getRef(String protocolName) {
         return (T)Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{clientConfig.getInterfaceClass()},new ClientInvocationHandler(cluster));
     }

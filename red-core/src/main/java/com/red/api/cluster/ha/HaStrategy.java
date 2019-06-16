@@ -1,9 +1,9 @@
 package com.red.api.cluster.ha;
 
 import com.red.api.cluster.loadBalance.LoadBalance;
-import com.red.api.message.Request;
-import com.red.api.message.Response;
+import com.red.api.message.RequestMessage;
+import com.red.api.message.ResponseMessage;
 
 public interface HaStrategy {
-    Response call(Request request, LoadBalance loadBalance);
+    ResponseMessage call(RequestMessage requestMessage, LoadBalance loadBalance);
 }
