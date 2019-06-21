@@ -4,6 +4,7 @@ import com.red.api.cluster.Cluster;
 import com.red.api.config.ClientConfig;
 import com.red.api.config.ProtocolConfig;
 import com.red.api.config.RegistryConfig;
+import com.red.api.message.ResponseFuture;
 import com.red.api.proxy.ClientInvocationHandler;
 import com.red.api.registry.Registry;
 import com.red.api.rpc.RedReferer;
@@ -14,11 +15,14 @@ import org.I0Itec.zkclient.ZkClient;
 import java.lang.reflect.Proxy;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DefaultClient<T> implements Client<T>{
 
     private AtomicBoolean inited = new AtomicBoolean(false);
+    public static Map<Long,ResponseFuture> requetIdMap = new ConcurrentHashMap<>();
     private ClientConfig<T> clientConfig;
     //虽然保留多个集群，但每次访问只能选择一个集群访问
     private Cluster cluster;

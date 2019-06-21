@@ -3,7 +3,7 @@ package com.red.api.message;
 import java.util.Map;
 
 //响应报文
-public class ResponseMessage implements RedMessage{
+public class ResponseMessage implements RedMessage {
     private Object value;
     private Exception exception;
     private long requestId;

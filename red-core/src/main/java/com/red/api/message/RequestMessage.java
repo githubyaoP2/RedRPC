@@ -7,6 +7,7 @@ import java.util.Map;
 //请求报文
 public class RequestMessage implements RedMessage{
     private String intefaceName;
+    private String implCode;//实现编码，暂定为实现类名称
     private String methodName;
     private Object[] arguments;
     private Map<String,String> attachments;
@@ -70,5 +71,13 @@ public class RequestMessage implements RedMessage{
 
     public void setRedVersion(RedVersion redVersion) {
         this.redVersion = redVersion;
+    }
+
+    public String getImplCode() {
+        return implCode;
+    }
+
+    public void setImplCode(String implCode) {
+        this.implCode = implCode;
     }
 }
