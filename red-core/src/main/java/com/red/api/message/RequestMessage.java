@@ -2,10 +2,14 @@ package com.red.api.message;
 
 import com.red.api.rpc.RedVersion;
 
+import java.io.Serializable;
 import java.util.Map;
 
 //请求报文
-public class RequestMessage implements RedMessage{
+public class RequestMessage implements RedMessage,Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String intefaceName;
     private String implCode;//实现编码，暂定为实现类名称
     private String methodName;

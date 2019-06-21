@@ -1,9 +1,13 @@
 package com.red.api.message;
 
+import java.io.Serializable;
 import java.util.Map;
 
 //响应报文
-public class ResponseMessage implements RedMessage {
+public class ResponseMessage implements RedMessage,Serializable {
+
+    private static final long serialVersionUID = 2L;
+
     private Object value;
     private Exception exception;
     private long requestId;

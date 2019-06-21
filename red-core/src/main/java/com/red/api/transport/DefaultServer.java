@@ -1,10 +1,13 @@
 package com.red.api.transport;
 
 import com.red.api.config.MethodConfig;
+import com.red.api.config.RegistryConfig;
 import com.red.api.config.ServiceConfig;
+import com.red.api.registry.Registry;
 import com.red.api.rpc.Exporter;
 import com.red.api.rpc.RedExporter;
 import com.red.api.util.LoggerUtil;
+import org.I0Itec.zkclient.ZkClient;
 
 import java.util.List;
 import java.util.Map;
@@ -50,10 +53,22 @@ public class DefaultServer implements Server{
             sb.append(")");
             implClassMap.put(sb.toString(),serviceConfig.getImplClass());
         });
+
     }
 
     //IP一样，直接以端口区分
     private String generateAddress(ServiceConfig serviceConfig){
         return serviceConfig.getPort();
+    }
+
+    private void registerToZK(ServiceConfig serviceConfig){
+        List<RegistryConfig> registryConfigList = serviceConfig.getRegistryConfigList();
+        for (RegistryConfig registryConfig:registryConfigList){
+            if("ZooKeeper".equals(registryConfig.getName())){
+                String address = registryConfig.getAddress()+":2181";
+                String path = address+"";
+                ZkClient zkClient = new ZkClient(address,registryConfig.getRequestTimeOut(),registryConfig.getConnectTimeOut());
+            }
+        }
     }
 }
