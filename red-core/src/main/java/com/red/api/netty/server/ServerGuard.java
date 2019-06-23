@@ -56,4 +56,8 @@ public class ServerGuard extends ChannelInboundHandlerAdapter {
         }
         return sb.toString();
     }
+
+    public void close(){
+        channels.values().forEach(Channel::close);
+    }
 }

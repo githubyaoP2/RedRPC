@@ -8,6 +8,7 @@ import com.red.api.netty.handler.RedMessageHandler;
 import com.red.api.netty.server.ServerGuard;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.ServerSocketChannel;
@@ -17,6 +18,8 @@ import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.MessageToByteEncoder;
 
 import java.net.InetSocketAddress;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class RedExporter implements Exporter{
 
@@ -24,6 +27,10 @@ public class RedExporter implements Exporter{
     ServerBootstrap serverBootstrap;
     NioEventLoopGroup receiveGroup;
     NioEventLoopGroup ioGroup;
+    ChannelFuture channelFuture;
+    ServerGuard serverGuard;
+
+    private ThreadPoolExecutor threadPoolExecutor;//服务端统一业务线程池
 
     public RedExporter(ServiceConfig serviceConfig){
         this.serviceConfig = serviceConfig;
@@ -37,6 +44,7 @@ public class RedExporter implements Exporter{
         MessageToByteEncoder redEncoder;
         ByteToMessageDecoder redDecoder;
         ProtocolConfig protocolConfig = serviceConfig.getProtocolConfig();
+        serverGuard = new ServerGuard(protocolConfig.getMaxConnections());
         switch (protocolConfig.getCodec()){
             case "red":
                 redEncoder = new RedEncoder(protocolConfig.getSerialization());
@@ -52,13 +60,31 @@ public class RedExporter implements Exporter{
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
-                        nioSocketChannel.pipeline().addLast(new ServerGuard(protocolConfig.getMaxConnections()));
+                        nioSocketChannel.pipeline().addLast(serverGuard);
                         nioSocketChannel.pipeline().addLast(redDecoder);
                         nioSocketChannel.pipeline().addLast(redEncoder);
-                        nioSocketChannel.pipeline().addLast(new RedMessageHandler());
+                        nioSocketChannel.pipeline().addLast(new RedMessageHandler(threadPoolExecutor));
                     }
                 });
-        serverBootstrap.bind(new InetSocketAddress(Integer.parseInt(serviceConfig.getPort())));
+        channelFuture = serverBootstrap.bind(new InetSocketAddress(Integer.parseInt(serviceConfig.getPort()))).syncUninterruptibly();
+    }
+
+    public void close(){
+        if(channelFuture.channel() != null){
+            channelFuture.channel().close();
+            receiveGroup.shutdownGracefully();
+            ioGroup.shutdownGracefully();
+            receiveGroup = null;
+            ioGroup = null;
+        }
+
+        if(serverGuard != null){
+            serverGuard.close();
+        }
+
+        if(threadPoolExecutor != null){
+            threadPoolExecutor.shutdown();
+        }
     }
 
 }
