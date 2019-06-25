@@ -1,6 +1,8 @@
 package com.red.api.rpc;
 
 import com.red.api.config.ProtocolConfig;
+import com.red.api.message.RequestMessage;
+import com.red.api.message.ResponseFuture;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -21,5 +23,7 @@ public interface Referer {
     String getUrl();
 
     String getGroup();
+
+    public ResponseFuture request(RequestMessage requestMessage);
 
 }

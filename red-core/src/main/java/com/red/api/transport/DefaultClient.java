@@ -18,9 +18,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class DefaultClient<T> implements Client<T>{
 
+    private static AtomicLong requestId = new AtomicLong(0);
     private AtomicBoolean inited = new AtomicBoolean(false);
     public static Map<Long,ResponseFuture> requetIdMap = new ConcurrentHashMap<>();
     private ClientConfig<T> clientConfig;
@@ -39,7 +41,7 @@ public class DefaultClient<T> implements Client<T>{
             urls = discoverService(group,interfaceName);
         }
         for(String url:urls){
-            Referer referer = new RedReferer(url,protocolConfig);
+            Referer referer = new RedReferer(group,url,protocolConfig);
             referer.init();
             cluster.addReferer(referer);
         }
@@ -48,7 +50,7 @@ public class DefaultClient<T> implements Client<T>{
 
     @Override
     public T getRef(String protocolName) {
-        return (T)Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{clientConfig.getInterfaceClass()},new ClientInvocationHandler(cluster));
+        return (T)Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{clientConfig.getInterfaceClass()},new ClientInvocationHandler(cluster,clientConfig));
     }
 
     /**
@@ -115,6 +117,10 @@ public class DefaultClient<T> implements Client<T>{
 
     public void register(){
 
+    }
+
+    public static Long getRequestId(){
+        return requestId.incrementAndGet();
     }
 
 }

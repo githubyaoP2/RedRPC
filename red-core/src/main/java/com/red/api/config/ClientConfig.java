@@ -13,6 +13,8 @@ public class ClientConfig<T> extends InterfaceConfig{
 
     private String loadBalance;//负载均衡策略
 
+    private String implClass;
+
     public ProtocolConfig getProtocolConfig() {
         return protocolConfig;
     }
@@ -43,5 +45,13 @@ public class ClientConfig<T> extends InterfaceConfig{
 
     public void setLoadBalance(String loadBalance) {
         this.loadBalance = loadBalance;
+    }
+
+    public String getImplClass() {
+        return implClass;
+    }
+
+    public void setImplClass(String implClass) {
+        this.implClass = implClass;
     }
 }

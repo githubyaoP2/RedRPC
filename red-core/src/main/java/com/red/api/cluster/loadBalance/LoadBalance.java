@@ -12,8 +12,8 @@ public abstract class LoadBalance {
         this.referers = referers;
     }
 
-    abstract Referer select(RequestMessage requestMessage);
+    public abstract Referer select(RequestMessage requestMessage);
 
-    abstract void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder);
+    public abstract void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder);
 
 }

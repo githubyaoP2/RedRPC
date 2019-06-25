@@ -1,33 +1,60 @@
 package com.red.api.rpc;
 
 import com.red.api.config.ProtocolConfig;
+import com.red.api.message.RequestMessage;
+import com.red.api.message.ResponseFuture;
 import com.red.api.netty.codec.RedDecoder;
 import com.red.api.netty.codec.RedEncoder;
 import com.red.api.netty.handler.RedMessageHandler;
-import com.red.api.transport.Channel;
+import com.red.api.transport.DefaultClient;
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.MessageToByteEncoder;
+import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class RedReferer implements Referer{
 
-    String url;
+    public static final String STATE_AVAIABLE = "available";//可用
+    public static final String STATE_UNAVAIABLE = "unAvailable";//不可用
+
     ProtocolConfig protocolConfig;
     Bootstrap bootstrap;
     NioEventLoopGroup nioEventLoopGroup;
     List<Channel> channelList = new ArrayList<>();
+    volatile String state = STATE_UNAVAIABLE;
+    AtomicInteger activeRefererCount = new AtomicInteger(0);
+    final String group;
+    final String url;
+    ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
 
-    public RedReferer(String url, ProtocolConfig protocolConfig) {
+    public RedReferer(String group,String url, ProtocolConfig protocolConfig) {
         this.url = url;
         this.protocolConfig = protocolConfig;
+        this.group = group;
+    }
+
+    @Override
+    public ResponseFuture request(RequestMessage requestMessage){
+        if(isAvailable()){
+            activeRefererCount.incrementAndGet();
+            Channel channel = channelList.get(threadLocalRandom.nextInt(channelList.size()));
+            channel.writeAndFlush(requestMessage).syncUninterruptibly();
+            DefaultClient.requetIdMap.put(requestMessage.getRequestId(),new ResponseFuture());
+            activeRefererCount.decrementAndGet();
+        }
+        return null;
     }
 
     @Override
@@ -57,6 +84,7 @@ public class RedReferer implements Referer{
                         nioSocketChannel.pipeline().addLast(redMessageHandler);
                     }
                 });
+        initConnectPool();
     }
 
     public void initConnectPool(){
@@ -65,29 +93,45 @@ public class RedReferer implements Referer{
             bootstrap.connect(ipPort[0],Integer.parseInt(ipPort[1])).addListener(new GenericFutureListener<ChannelFuture>() {
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception {
-                    future.channel();
+                    if(future.isSuccess()) {
+                        channelList.add(future.channel());
+                    }
                 }
             });
+        }
+        if(!channelList.isEmpty()){
+            state = STATE_AVAIABLE;
         }
     }
 
     @Override
     public boolean isAvailable() {
-        return false;
+        return state == STATE_AVAIABLE;
     }
 
     @Override
     public int activeRefererCount() {
-        return 0;
+        return activeRefererCount.get();
     }
 
     @Override
     public String getUrl() {
-        return null;
+        return url;
     }
 
     @Override
     public String getGroup() {
-        return null;
+        return group;
+    }
+
+    public void close(){
+        nioEventLoopGroup.shutdownGracefully();
+        nioEventLoopGroup = null;
+        channelList.forEach(Channel::close);
+    }
+
+    public void reConnect(){
+        channelList.clear();
+        initConnectPool();
     }
 }

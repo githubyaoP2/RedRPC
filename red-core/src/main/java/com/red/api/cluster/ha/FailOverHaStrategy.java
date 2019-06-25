@@ -2,6 +2,7 @@ package com.red.api.cluster.ha;
 
 import com.red.api.cluster.loadBalance.LoadBalance;
 import com.red.api.message.RequestMessage;
+import com.red.api.message.ResponseFuture;
 import com.red.api.message.ResponseMessage;
 
 /**
@@ -9,7 +10,7 @@ import com.red.api.message.ResponseMessage;
  */
 public class FailOverHaStrategy implements HaStrategy{
     @Override
-    public ResponseMessage call(RequestMessage requestMessage, LoadBalance loadBalance) {
+    public ResponseFuture call(RequestMessage requestMessage, LoadBalance loadBalance) {
         return null;
     }
 }
