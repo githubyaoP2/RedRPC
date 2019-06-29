@@ -28,6 +28,8 @@ public class RedReferer implements Referer{
 
     public static final String STATE_AVAIABLE = "available";//可用
     public static final String STATE_UNAVAIABLE = "unAvailable";//不可用
+    AtomicInteger errorCount = new AtomicInteger(0);
+    public final int ERROR_VALUE = 10;//熔断阀值
 
     ProtocolConfig protocolConfig;
     Bootstrap bootstrap;
@@ -50,9 +52,27 @@ public class RedReferer implements Referer{
         if(isAvailable()){
             activeRefererCount.incrementAndGet();
             Channel channel = channelList.get(threadLocalRandom.nextInt(channelList.size()));
-            channel.writeAndFlush(requestMessage).syncUninterruptibly();
-            DefaultClient.requetIdMap.put(requestMessage.getRequestId(),new ResponseFuture());
+            ResponseFuture responseFuture = new ResponseFuture();
+            DefaultClient.requetIdMap.put(requestMessage.getRequestId(),responseFuture);
+            channel.writeAndFlush(requestMessage).syncUninterruptibly().addListener(new GenericFutureListener<Future<? super Void>>() {
+                @Override
+                public void operationComplete(Future<? super Void> future) throws Exception {
+                    if(future.isSuccess()){
+                        //ToDO:首先要发送成功，其实要根据收回的结果来判断是增加还是重置失败次数
+                        if(responseFuture.isDone()){
+                            resetErrorInvoke();
+                        }else {
+                            addErrorInvoke();
+                        }
+                    }else {
+                        addErrorInvoke();
+                    }
+                }
+            });
+
+
             activeRefererCount.decrementAndGet();
+            return responseFuture;
         }
         return null;
     }
@@ -133,5 +153,19 @@ public class RedReferer implements Referer{
     public void reConnect(){
         channelList.clear();
         initConnectPool();
+    }
+
+    private void addErrorInvoke(){
+        errorCount.incrementAndGet();
+        if(errorCount.get() > ERROR_VALUE && isAvailable()){
+            state = STATE_UNAVAIABLE;
+        }
+    }
+
+    private void resetErrorInvoke(){
+        errorCount.set(0);
+        if(!isAvailable()){
+            state = STATE_AVAIABLE;
+        }
     }
 }

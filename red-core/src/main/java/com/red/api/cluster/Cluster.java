@@ -3,6 +3,7 @@ package com.red.api.cluster;
 import com.red.api.cluster.ha.HaStrategy;
 import com.red.api.cluster.loadBalance.LoadBalance;
 import com.red.api.message.RequestMessage;
+import com.red.api.message.ResponseFuture;
 import com.red.api.rpc.Referer;
 import com.red.api.message.ResponseMessage;
 
@@ -18,7 +19,7 @@ public class Cluster {
         this.loadBalance = loadBalance;
     }
 
-    public ResponseMessage call(RequestMessage requestMessage){
+    public ResponseFuture call(RequestMessage requestMessage){
        return haStrategy.call(requestMessage,loadBalance);
     }
 

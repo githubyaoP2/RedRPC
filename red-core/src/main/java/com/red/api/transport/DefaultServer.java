@@ -53,7 +53,7 @@ public class DefaultServer implements Server{
             sb.append(")");
             implClassMap.put(sb.toString(),serviceConfig.getImplClass());
         });
-
+        registerToZK(serviceConfig);
     }
 
     //IP一样，直接以端口区分

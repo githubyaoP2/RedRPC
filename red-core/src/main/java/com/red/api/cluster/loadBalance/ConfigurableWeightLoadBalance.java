@@ -34,7 +34,7 @@ public class ConfigurableWeightLoadBalance extends LoadBalance{
     }
 
     @Override
-    Referer select(RequestMessage requestMessage) {
+    public Referer select(RequestMessage requestMessage) {
         if(holder == emptyHolder)
             return null;
         RefererListCacheHolder h = this.holder;
@@ -55,7 +55,7 @@ public class ConfigurableWeightLoadBalance extends LoadBalance{
     }
 
     @Override
-    void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
+    public void selectToHolder(RequestMessage requestMessage, List<Referer> refersHolder) {
 
     }
 
