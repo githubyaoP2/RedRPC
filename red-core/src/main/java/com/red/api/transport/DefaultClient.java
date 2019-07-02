@@ -1,6 +1,12 @@
 package com.red.api.transport;
 
 import com.red.api.cluster.Cluster;
+import com.red.api.cluster.ha.FailFastHaStrategy;
+import com.red.api.cluster.ha.FailOverHaStrategy;
+import com.red.api.cluster.ha.HaStrategy;
+import com.red.api.cluster.loadBalance.ConsistentHashLoadBalance;
+import com.red.api.cluster.loadBalance.LoadBalance;
+import com.red.api.cluster.loadBalance.RoundRobinLoadBalance;
 import com.red.api.config.ClientConfig;
 import com.red.api.config.ProtocolConfig;
 import com.red.api.config.RegistryConfig;
@@ -13,6 +19,7 @@ import com.red.api.util.Constants;
 import org.I0Itec.zkclient.ZkClient;
 
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -33,7 +40,30 @@ public class DefaultClient<T> implements Client<T>{
         this.clientConfig = clientConfig;
         //初始化集群
         ProtocolConfig protocolConfig = clientConfig.getProtocolConfig();
-        cluster = new Cluster(protocolConfig.getHaStrategy(),protocolConfig.getLoadBalance());
+//        cluster = new Cluster(protocolConfig.getHaStrategy(),protocolConfig.getLoadBalance());
+        HaStrategy haStrategy;
+        LoadBalance loadBalance;
+        switch (clientConfig.getHaStrategy()){
+            case "FailFast":
+                haStrategy = new FailFastHaStrategy();
+                break;
+            case "FailOver":
+                haStrategy = new FailOverHaStrategy();
+                break;
+            default:
+                haStrategy = new FailFastHaStrategy();
+        }
+        switch (clientConfig.getLoadBalance()){
+            case "ConsistentHash":
+                loadBalance = new ConsistentHashLoadBalance();
+                break;
+            case "RoundBin":
+                loadBalance = new RoundRobinLoadBalance();
+                break;
+            default:
+                loadBalance = new ConsistentHashLoadBalance();
+        }
+        cluster = new Cluster(haStrategy,loadBalance);
         String group = clientConfig.getGroup();
         String interfaceName = clientConfig.getInterfaceClass().getName();
         List<String> urls = discoverCommand(group,interfaceName);
@@ -49,7 +79,7 @@ public class DefaultClient<T> implements Client<T>{
     }
 
     @Override
-    public T getRef(String protocolName) {
+    public T getRef() {
         return (T)Proxy.newProxyInstance(this.getClass().getClassLoader(),new Class[]{clientConfig.getInterfaceClass()},new ClientInvocationHandler(cluster,clientConfig));
     }
 
@@ -60,25 +90,26 @@ public class DefaultClient<T> implements Client<T>{
      * @return
      */
     public List<String> discoverCommand(String group,String interfaceName){
-        String url = Constants.project+Constants.separator+group+Constants.separator+interfaceName+Constants.separator+Constants.command;
-        List<RegistryConfig> registryConfigList = clientConfig.getRegistryConfigList();
-        for(RegistryConfig registryConfig:registryConfigList){
-            switch (registryConfig.getRegProtocol()){
-                case "zookeeper":
-                    String zkAddr = registryConfig.getAddress();
-                    int sessionTimeOut = registryConfig.getRegistrySessionTimeout();
-                    int connectTimeOut = registryConfig.getConnectTimeOut();
-                    //序列化器随后添加
-                    ZkClient zkClient = new ZkClient(zkAddr,sessionTimeOut,connectTimeOut);
-                    String command = zkClient.readData(url);
-                    return parseCommand(command);
-                case "consul":
-                    break;
-                default:
-                    break;
-            }
-        }
-        return null;
+        List<String> commandList = new ArrayList<>();
+//        String url = Constants.project+Constants.separator+group+Constants.separator+interfaceName+Constants.separator+Constants.command;
+//        List<RegistryConfig> registryConfigList = clientConfig.getRegistryConfigList();
+//        for(RegistryConfig registryConfig:registryConfigList){
+//            switch (registryConfig.getName()){
+//                case "ZooKeeper":
+//                    String zkAddr = registryConfig.getAddress();
+//                    int sessionTimeOut = registryConfig.getRegistrySessionTimeout();
+//                    int connectTimeOut = registryConfig.getConnectTimeOut();
+//                    //序列化器随后添加
+//                    ZkClient zkClient = new ZkClient(zkAddr,sessionTimeOut,connectTimeOut);
+//                    String command = zkClient.readData(url);
+//                    return parseCommand(command);
+//                case "consul":
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
+        return commandList;
     }
 
     /**
@@ -94,11 +125,11 @@ public class DefaultClient<T> implements Client<T>{
 
     //服务发现
     public List<String> discoverService(String group,String interfaceName){
-        String url = Constants.project+Constants.separator+group+Constants.separator+interfaceName+Constants.separator+Constants.server+Constants.separator;
+        String url = Constants.separator+Constants.project+Constants.separator+group+Constants.separator+interfaceName+Constants.separator+Constants.server;
         List<RegistryConfig> registryConfigList = clientConfig.getRegistryConfigList();
         for(RegistryConfig registryConfig:registryConfigList){
-            switch (registryConfig.getRegProtocol()){
-                case "zookeeper":
+            switch (registryConfig.getName()){
+                case "ZooKeeper":
                     String zkAddr = registryConfig.getAddress();
                     int sessionTimeOut = registryConfig.getRegistrySessionTimeout();
                     int connectTimeOut = registryConfig.getConnectTimeOut();

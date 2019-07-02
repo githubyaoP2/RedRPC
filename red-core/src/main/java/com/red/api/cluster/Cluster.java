@@ -7,12 +7,13 @@ import com.red.api.message.ResponseFuture;
 import com.red.api.rpc.Referer;
 import com.red.api.message.ResponseMessage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cluster {
     HaStrategy haStrategy;
     LoadBalance loadBalance;
-    List<Referer> refererList;
+    List<Referer> refererList = new ArrayList<>();
 
     public Cluster(HaStrategy haStrategy, LoadBalance loadBalance) {
         this.haStrategy = haStrategy;
@@ -54,5 +55,6 @@ public class Cluster {
 
     public void addReferer(Referer referer){
         refererList.add(referer);
+        loadBalance.onRefresh(refererList);
     }
 }

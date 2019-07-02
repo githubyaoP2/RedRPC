@@ -7,11 +7,17 @@ import com.red.api.registry.Registry;
 import com.red.api.rpc.Exporter;
 import com.red.api.rpc.RedExporter;
 import com.red.api.util.LoggerUtil;
+import io.netty.util.internal.ConcurrentSet;
 import org.I0Itec.zkclient.ZkClient;
 
+import java.net.Inet4Address;
+import java.net.InetSocketAddress;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -19,41 +25,43 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class DefaultServer implements Server{
 
-    private static Map<String,Boolean> isServerInit = new ConcurrentHashMap<>();
+    private static Set<ServiceConfig> isServerInit = new CopyOnWriteArraySet<>();
     
-    private static Map<ServiceConfig,Boolean> isExport = new ConcurrentHashMap<>();
+    private static Set<ServiceConfig> isExport = new CopyOnWriteArraySet<>();
     
     //以实现类、方法、参数为key的实现类，保存服务端已发布的服务
     public static Map<String,Object> implClassMap = new ConcurrentHashMap<>();
 
-    
-
     @Override
     public void publish(ServiceConfig serviceConfig){
-        if(isExport.get(serviceConfig)){
+        if(isExport.contains(serviceConfig)){
             LoggerUtil.warn("此服务已发布");
             return;
         }
         //如果此端口已绑定nio，则不需要再次初始化，即channel共享
-        if(!isServerInit.get(generateAddress(serviceConfig))){
+        if(!isServerInit.contains(generateAddress(serviceConfig))){
             Exporter exporter = new RedExporter(serviceConfig);
             exporter.export();
+            isServerInit.add(serviceConfig);
         }
         String implClassName = serviceConfig.getImplClass().getClass().getSimpleName();
+        implClassMap.put(implClassName,serviceConfig.getImplClass());
+        //ToDO:具体开放哪些方法和方法的验证
         List<MethodConfig> methodConfigList = serviceConfig.getMethodConfigList();
-        methodConfigList.forEach(methodConfig -> {
-            StringBuilder sb = new StringBuilder(implClassName);
-            sb.append(":");
-            sb.append(methodConfig.getName());
-            sb.append("(");
-            Class[] params = methodConfig.getArgumentTypes();
-            for (Class clazz:params){
-                sb.append(clazz.getSimpleName());
-            }
-            sb.append(")");
-            implClassMap.put(sb.toString(),serviceConfig.getImplClass());
-        });
+//        methodConfigList.forEach(methodConfig -> {
+//            StringBuilder sb = new StringBuilder(implClassName);
+//            sb.append(":");
+//            sb.append(methodConfig.getName());
+//            sb.append("(");
+//            Class[] params = methodConfig.getArgumentTypes();
+//            for (Class clazz:params){
+//                sb.append(clazz.getSimpleName());
+//            }
+//            sb.append(")");
+//            implClassMap.put(sb.toString(),serviceConfig.getImplClass());
+//        });
         registerToZK(serviceConfig);
+        isExport.add(serviceConfig);
     }
 
     //IP一样，直接以端口区分
@@ -66,8 +74,17 @@ public class DefaultServer implements Server{
         for (RegistryConfig registryConfig:registryConfigList){
             if("ZooKeeper".equals(registryConfig.getName())){
                 String address = registryConfig.getAddress()+":2181";
-                String path = address+"";
+                String path = "/RedRPC/"+serviceConfig.getGroup();
                 ZkClient zkClient = new ZkClient(address,registryConfig.getRequestTimeOut(),registryConfig.getConnectTimeOut());
+                if(!zkClient.exists(path+"/"+serviceConfig.getInterfaceClass().getName()+"/server")){
+                    zkClient.createPersistent(path+"/"+serviceConfig.getInterfaceClass().getName()+"/server",true);
+                }
+                try {
+                    String serverAddress = Inet4Address.getLocalHost().getHostAddress()+":"+serviceConfig.getPort();
+                    zkClient.createEphemeral(path+"/"+serviceConfig.getInterfaceClass().getName()+"/server/"+serverAddress);
+                }catch (Exception e){
+                    System.out.println(e);
+                }
             }
         }
     }

@@ -27,6 +27,7 @@ public class ServerGuard extends ChannelInboundHandlerAdapter {
             LoggerUtil.info("超出最大连接机器数限制");
             channel.close();
         }else {
+            System.out.println("连接新建");
             channels.put(getUniqueConnectKey(channel),channel);
             ctx.fireChannelRegistered();
         }

@@ -3,7 +3,7 @@ package com.red.api.util;
 import java.io.File;
 
 public class Constants {
-    public static final String separator = File.separator;
+    public static final String separator = "/";
     public static final String spliter = "&";
 
     public static final String project = "RedRPC";

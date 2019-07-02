@@ -115,6 +115,8 @@ public class RedReferer implements Referer{
                 public void operationComplete(ChannelFuture future) throws Exception {
                     if(future.isSuccess()) {
                         channelList.add(future.channel());
+                    }else{
+                        System.out.println(future.cause());
                     }
                 }
             });
