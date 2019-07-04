@@ -46,24 +46,24 @@ public class RedExporter implements Exporter{
         ByteToMessageDecoder redDecoder;
         ProtocolConfig protocolConfig = serviceConfig.getProtocolConfig();
         serverGuard = new ServerGuard(protocolConfig.getMaxConnections());
-        switch (protocolConfig.getCodec()){
-            case "red":
-                redEncoder = new RedEncoder(protocolConfig.getSerialization());
-                redDecoder = new RedDecoder(protocolConfig.getSerialization());
-                break;
-            case "local":
-            default:
-                redEncoder = new RedEncoder(protocolConfig.getSerialization());
-                redDecoder = new RedDecoder(protocolConfig.getSerialization());
-        }
+//        switch (protocolConfig.getCodec()){
+//            case "red":
+//                redEncoder = new RedEncoder(protocolConfig.getSerialization());
+//                redDecoder = new RedDecoder(protocolConfig.getSerialization());
+//                break;
+//            case "local":
+//            default:
+//                redEncoder = new RedEncoder(protocolConfig.getSerialization());
+//                redDecoder = new RedDecoder(protocolConfig.getSerialization());
+//        }
         serverBootstrap.group(receiveGroup,ioGroup)
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
                         nioSocketChannel.pipeline().addLast(serverGuard);
-                        nioSocketChannel.pipeline().addLast(redDecoder);
-                        nioSocketChannel.pipeline().addLast(redEncoder);
+                        nioSocketChannel.pipeline().addLast(new RedDecoder(protocolConfig.getSerialization()));
+                        nioSocketChannel.pipeline().addLast(new RedEncoder(protocolConfig.getSerialization()));
                         nioSocketChannel.pipeline().addLast(new RedMessageHandler(threadPoolExecutor));
                     }
                 });

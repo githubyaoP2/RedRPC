@@ -3,21 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="61ee083b-8309-4b2c-8d96-d355102e4d09" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/Cluster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedReferer.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedReferer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/src/main/java/com/red/api/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/target/classes/com/red/api/rpc/RedExporter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/target/classes/com/red/api/rpc/RedExporter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/target/classes/com/red/api/rpc/RedExporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/target/classes/com/red/api/rpc/RedExporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/target/classes/com/red/api/transport/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/target/classes/com/red/api/transport/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/target/classes/com/red/api/transport/DefaultClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/target/classes/com/red/api/transport/DefaultClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-core/target/classes/com/red/api/transport/DefaultServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/target/classes/com/red/api/transport/DefaultServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/red-demo/target/classes/com/red/demo/ServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-demo/target/classes/com/red/demo/ServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-core/target/classes/com/red/api/netty/server/ServerGuard.class" beforeDir="false" afterPath="$PROJECT_DIR$/red-core/target/classes/com/red/api/netty/server/ServerGuard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ClientTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,32 +33,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DefaultClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1625">
-              <caret line="85" column="41" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RedReferer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RedReferer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedReferer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="118" column="57" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
+            <state relative-caret-position="235">
+              <caret line="119" column="57" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedEncoder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/codec/RedEncoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -76,8 +57,8 @@
       <file leaf-file-name="RedExporter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1160">
-              <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+            <state relative-caret-position="75">
+              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,33 +66,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerGuard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java">
+      <file leaf-file-name="AbstractChannel.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/AbstractChannel.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="226">
+              <caret line="407" selection-start-line="407" selection-end-line="407" />
               <folding>
-                <element signature="e#541#542#0" expanded="true" />
-                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#12119#12314#0" expanded="true" />
+                <element signature="e#12313#12314#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientInvocationHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/proxy/ClientInvocationHandler.java">
+      <file leaf-file-name="DefaultChannelPipeline.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/DefaultChannelPipeline.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="126">
+              <caret line="690" selection-start-line="690" selection-end-line="690" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AbstractChannelHandlerContext.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/AbstractChannelHandlerContext.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="267">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,8 +112,8 @@
       <file leaf-file-name="ClientTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="42" column="52" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+            <state relative-caret-position="92">
+              <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,20 +121,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsistentHashLoadBalance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/ConsistentHashLoadBalance.java">
+      <file leaf-file-name="ChannelInitializer.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/ChannelInitializer.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+            <state relative-caret-position="142">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cluster.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/Cluster.java">
+      <file leaf-file-name="DefaultChannelHandlerContext.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/DefaultChannelHandlerContext.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            <state relative-caret-position="142">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#743#744#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -245,15 +238,15 @@
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/ConfigurableWeightLoadBalance.java" />
         <option value="$PROJECT_DIR$/red-demo/pom.xml" />
         <option value="$PROJECT_DIR$/red-core/pom.xml" />
-        <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/Client.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/util/Constants.java" />
-        <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/Cluster.java" />
-        <option value="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ClientTest.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultServer.java" />
         <option value="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ServiceTest.java" />
+        <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java" />
+        <option value="$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ClientTest.java" />
+        <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java" />
         <option value="$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedReferer.java" />
       </list>
     </option>
@@ -286,7 +279,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1358" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -300,9 +293,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,6 +375,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
+              <item name="red-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="message" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -395,6 +396,50 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="netty" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
+              <item name="red-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
+              <item name="red-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
+              <item name="codec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
+              <item name="red-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
+              <item name="red-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
@@ -463,76 +508,6 @@
             </path>
             <path>
               <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="red-demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="red" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RedRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="red" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RedRPC" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -544,10 +519,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Red&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/rpc/RedExporter.java&#10;Defa&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/transport/DefaultClient.java&#10;Pro&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/config/ProtocolConfig.java&#10;Ser&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/config/ServiceConfig.java&#10;Fai&#9;PSI&#9;JAVA://com.red.api.cluster.ha.FailFastHaStrategy&#10;Loca&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/cluster/loadBalance/LocalFirstLoadBalance.java&#10;Def&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/transport/DefaultClient.java&#10;RedClient&#9;FILE&#9;file://D:/project/test/RedRPC/src/main/java/com/red/client/RedClient.java&#10;RedR&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/rpc/RedReferer.java&#10;Serv&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/config/ServiceConfig.java&#10;Lined&#9;FILE&#9;jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/handler/codec/LineBasedFrameDecoder.class&#10;ArrayList&#9;PSI&#9;JAVA://java.util.ArrayList&#10;LineBase&#9;PSI&#9;JAVA://io.netty.handler.codec.LineBasedFrameDecoder&#10;RedCl&#9;PSI&#9;JAVA://com.red.client.RedClient&#10;NioE&#9;FILE&#9;jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/nio/NioEventLoop.class&#10;ForkJoinTas&#9;PSI&#9;JAVA://java.util.concurrent.ForkJoinTask&#10;Delayedw&#9;PSI&#9;JAVA://java.util.concurrent.ScheduledThreadPoolExecutor.DelayedWorkQueue&#10;DelayedQ&#9;PSI&#9;JAVA://java.util.concurrent.ScheduledThreadPoolExecutor.DelayedWorkQueue&#10;Linked&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/LinkedTransferQueue.java&#10;LinkedB&#9;PSI&#9;JAVA://java.util.concurrent.LinkedBlockingQueue&#10;Prio&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/PriorityBlockingQueue.java&#10;CountD&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/CountDownLatch.java&#10;Cons&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/util/Constants.java&#10;Selection&#9;PSI&#9;JAVA://java.nio.channels.SelectionKey&#10;Hashed&#9;PSI&#9;JAVA://io.netty.util.HashedWheelTimer&#10;ReadTi&#9;PSI&#9;JAVA://io.netty.handler.timeout.ReadTimeoutHandler&#10;IdleStateHandler &#9;PSI&#9;JAVA://io.netty.handler.timeout.IdleStateHandler&#10;ScheduledFutureTask&#9;PSI&#9;JAVA://io.netty.util.concurrent.ScheduledFutureTask&#10;NioEvent&#9;PSI&#9;JAVA://io.netty.channel.nio.NioEventLoop&#10;Sync&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java&#10;Future&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/FutureTask.java&#10;Coun&#9;PSI&#9;JAVA://java.util.concurrent.CountDownLatch&#10;Ree&#9;PSI&#9;JAVA://java.util.concurrent.locks.ReentrantLock&#10;AQS&#9;PSI&#9;JAVA://java.util.concurrent.locks.AbstractQueuedSynchronizer&#10;FutureTask&#9;PSI&#9;JAVA://java.util.concurrent.FutureTask&#10;Funct&#9;PSI&#9;JAVA://java.util.function.Function&#10;Blocki&#9;PSI&#9;JAVA://java.util.concurrent.BlockingQueue&#10;String&#9;PSI&#9;JAVA://java.lang.String&#10;FilterO&#9;PSI&#9;JAVA://java.io.FilterOutputStream&#10;BufferedO&#9;PSI&#9;JAVA://java.io.BufferedOutputStream&#10;FileO&#9;PSI&#9;JAVA://java.io.FileOutputStream&#10;ByteArrayI&#9;PSI&#9;JAVA://java.io.ByteArrayInputStream&#10;Su&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/function/Supplier.java&#10;Set&#9;FILE&#9;jar://D:/jdk1.8/jre/lib/rt.jar!/java/util/Set.class&#10;Predicate&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/function/Predicate.java&#10;Pred&#9;PSI&#9;JAVA://java.util.function.Predicate&#10;Collector&#9;PSI&#9;JAVA://java.util.stream.Collector&#10;Coll&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/stream/Collectors.java&#10;Functio&#9;PSI&#9;JAVA://java.util.function.Function&#10;Supp&#9;PSI&#9;JAVA://java.util.function.Supplier" />
+    <property name="SearchEverywhereHistoryKey" value="ClientT&#9;FILE&#9;file://D:/project/test/RedRPC/red-demo/src/main/java/com/red/demo/ClientTest.java&#10;Ser&#9;FILE&#9;file://D:/project/test/RedRPC/red-demo/src/main/java/com/red/demo/ServiceTest.java&#10;RedEx&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/rpc/RedExporter.java&#10;Red&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/netty/codec/RedEncoder.java&#10;Client&#9;FILE&#9;file://D:/project/test/RedRPC/red-demo/src/main/java/com/red/demo/ClientTest.java&#10;NioSocket&#9;PSI&#9;JAVA://io.netty.channel.socket.nio.NioSocketChannel&#10;NioE&#9;FILE&#9;jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/nio/NioEventLoop.class&#10;Server&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java&#10;RedE&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/rpc/RedExporter.java&#10;Service&#9;FILE&#9;file://D:/project/test/RedRPC/red-demo/src/main/java/com/red/demo/ServiceTest.java&#10;Defa&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/transport/DefaultClient.java&#10;Pro&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/config/ProtocolConfig.java&#10;Fai&#9;PSI&#9;JAVA://com.red.api.cluster.ha.FailFastHaStrategy&#10;Loca&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/cluster/loadBalance/LocalFirstLoadBalance.java&#10;Def&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/transport/DefaultClient.java&#10;RedClient&#9;FILE&#9;file://D:/project/test/RedRPC/src/main/java/com/red/client/RedClient.java&#10;RedR&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/rpc/RedReferer.java&#10;Serv&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/config/ServiceConfig.java&#10;Lined&#9;FILE&#9;jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/handler/codec/LineBasedFrameDecoder.class&#10;ArrayList&#9;PSI&#9;JAVA://java.util.ArrayList&#10;LineBase&#9;PSI&#9;JAVA://io.netty.handler.codec.LineBasedFrameDecoder&#10;RedCl&#9;PSI&#9;JAVA://com.red.client.RedClient&#10;ForkJoinTas&#9;PSI&#9;JAVA://java.util.concurrent.ForkJoinTask&#10;Delayedw&#9;PSI&#9;JAVA://java.util.concurrent.ScheduledThreadPoolExecutor.DelayedWorkQueue&#10;DelayedQ&#9;PSI&#9;JAVA://java.util.concurrent.ScheduledThreadPoolExecutor.DelayedWorkQueue&#10;Linked&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/LinkedTransferQueue.java&#10;LinkedB&#9;PSI&#9;JAVA://java.util.concurrent.LinkedBlockingQueue&#10;Prio&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/PriorityBlockingQueue.java&#10;CountD&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/CountDownLatch.java&#10;Cons&#9;FILE&#9;file://D:/project/test/RedRPC/red-core/src/main/java/com/red/api/util/Constants.java&#10;Selection&#9;PSI&#9;JAVA://java.nio.channels.SelectionKey&#10;Hashed&#9;PSI&#9;JAVA://io.netty.util.HashedWheelTimer&#10;ReadTi&#9;PSI&#9;JAVA://io.netty.handler.timeout.ReadTimeoutHandler&#10;IdleStateHandler &#9;PSI&#9;JAVA://io.netty.handler.timeout.IdleStateHandler&#10;ScheduledFutureTask&#9;PSI&#9;JAVA://io.netty.util.concurrent.ScheduledFutureTask&#10;NioEvent&#9;PSI&#9;JAVA://io.netty.channel.nio.NioEventLoop&#10;Sync&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java&#10;Future&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/concurrent/FutureTask.java&#10;Coun&#9;PSI&#9;JAVA://java.util.concurrent.CountDownLatch&#10;Ree&#9;PSI&#9;JAVA://java.util.concurrent.locks.ReentrantLock&#10;AQS&#9;PSI&#9;JAVA://java.util.concurrent.locks.AbstractQueuedSynchronizer&#10;FutureTask&#9;PSI&#9;JAVA://java.util.concurrent.FutureTask&#10;Funct&#9;PSI&#9;JAVA://java.util.function.Function&#10;Blocki&#9;PSI&#9;JAVA://java.util.concurrent.BlockingQueue&#10;String&#9;PSI&#9;JAVA://java.lang.String&#10;FilterO&#9;PSI&#9;JAVA://java.io.FilterOutputStream&#10;BufferedO&#9;PSI&#9;JAVA://java.io.BufferedOutputStream&#10;FileO&#9;PSI&#9;JAVA://java.io.FileOutputStream&#10;ByteArrayI&#9;PSI&#9;JAVA://java.io.ByteArrayInputStream&#10;Su&#9;FILE&#9;jar://D:/jdk1.8/src.zip!/java/util/function/Supplier.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -656,16 +633,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="RedRPC" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -687,6 +654,16 @@
       <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="RedRPC" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
     </configuration>
     <list>
       <item itemvalue="JUnit.test.test2" />
@@ -763,7 +740,8 @@
       <workItem from="1561424726455" duration="9526000" />
       <workItem from="1561719487251" duration="3092000" />
       <workItem from="1561790582118" duration="22506000" />
-      <workItem from="1562053509166" duration="6728000" />
+      <workItem from="1562053509166" duration="8376000" />
+      <workItem from="1562224034562" duration="6944000" />
     </task>
     <task id="LOCAL-00001" summary="修正到可以运行">
       <created>1543289857489</created>
@@ -808,7 +786,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="500179000" />
+    <option name="totallyTimeSpent" value="508771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -821,32 +799,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50106496" side_tool="true" weight="0.2707889" />
-      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.15548456" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info id="Structure" order="1" sideWeight="0.6" side_tool="true" weight="0.2736954" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5181237" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32928944" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3283582" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42643923" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50106496" side_tool="true" weight="0.2707889" />
+      <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.15548456" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42643923" />
       <window_info anchor="bottom" id="Sequence" order="12" weight="0.6076759" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49893504" weight="0.30703625" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4" visible="true" weight="0.28168264" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4" visible="true" weight="0.28434506" />
       <window_info anchor="bottom" id="JProfiler" order="13" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.31982943" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info id="Structure" order="1" sideWeight="0.6" side_tool="true" weight="0.2736954" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5181237" />
       <window_info anchor="bottom" id="Dependency Viewer" order="12" weight="0.32928944" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -854,18 +832,19 @@
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.14803626" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.31982943" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.42643923" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.14803626" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49893504" weight="0.30703625" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Sequence" order="12" weight="0.6076759" />
@@ -877,6 +856,7 @@
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.32928944" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.15548456" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49893504" weight="0.30703625" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4" visible="true" weight="0.2736954" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -885,7 +865,6 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Structure" order="1" sideWeight="0.6" side_tool="true" weight="0.2736954" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.14803626" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.31982943" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3347548" />
     </layout-to-restore>
@@ -1021,23 +1000,55 @@
           <url>file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java</url>
           <line>24</line>
           <properties />
-          <option name="timeStamp" value="83" />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedReferer.java</url>
           <line>112</line>
           <properties />
-          <option name="timeStamp" value="84" />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/AbstractChannel.class</url>
+          <line>378</line>
+          <properties />
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="85" />
+      <option name="time" value="109" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>this.ensureOpen(promise)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>promise.setUncancellable()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>ipPort[0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>AbstractChannel.this.isActive()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>ipPort</expression-string>
         <language-id>JAVA</language-id>
@@ -1061,288 +1072,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/red/client/RedClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-796">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/LocalFirstLoadBalance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/handler/RedMessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/jdk1.8/src.zip!/java/util/concurrent/ThreadLocalRandom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
-          <folding>
-            <element signature="e#6926#6927#0" expanded="true" />
-            <element signature="e#6989#6990#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/message/RequestMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/jdk1.8/src.zip!/java/util/concurrent/atomic/AtomicLong.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="198" column="22" selection-start-line="198" selection-start-column="22" selection-end-line="198" selection-end-column="22" />
-          <folding>
-            <element signature="e#5288#5289#0" expanded="true" />
-            <element signature="e#5359#5360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/AbstractConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/Referer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/message/ResponseFuture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding>
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/HelloServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/test/java/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/HelloService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/ha/HaStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/ha/FailOverHaStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding>
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/LoadBalance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-demo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/ConfigurableWeightLoadBalance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/red/server/RedServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="111" column="96" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/com/101tec/zkclient/0.10/zkclient-0.10.jar!/org/I0Itec/zkclient/IZkConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/com/101tec/zkclient/0.10/zkclient-0.10.jar!/org/I0Itec/zkclient/ZkConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/util/internal/ConcurrentSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/ProtocolConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#1382#1383#0" expanded="true" />
-            <element signature="e#1440#1441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/InterfaceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/Exporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1397" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/socket/ServerSocketChannel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/bootstrap/AbstractBootstrap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/ServiceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/com/101tec/zkclient/0.10/zkclient-0.10.jar!/org/I0Itec/zkclient/ZkClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6450">
-          <caret line="312" column="16" selection-start-line="312" selection-start-column="16" selection-end-line="312" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/lib/org/apache/zookeeper/zookeeper/3.4.6/zookeeper-3.4.6.jar!/org/apache/zookeeper/KeeperException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/ClientConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/RegistryConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1000">
@@ -1401,13 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/ConsistentHashLoadBalance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/Cluster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1422,27 +1144,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java">
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/LoadBalance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="225">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java">
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/ConfigurableWeightLoadBalance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1160">
-          <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+        <state relative-caret-position="864">
+          <caret line="42" column="53" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/LocalFirstLoadBalance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/ConfigHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/config/ProtocolConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/message/RequestMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/codec/RedDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/handler/RedMessageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1272">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/protocol/InjvmProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/protocol/RedProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/util/concurrent/Future.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/cluster/loadBalance/ConsistentHashLoadBalance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/proxy/ClientInvocationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/nio/NioEventLoopGroup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#2025#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/server/ServerGuard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="164">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
             <element signature="e#541#542#0" expanded="true" />
             <element signature="e#593#594#0" expanded="true" />
@@ -1450,17 +1259,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/proxy/ClientInvocationHandler.java">
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/nio/NioEventLoop.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="150">
+          <caret line="374" selection-start-line="374" selection-end-line="374" />
+          <folding>
+            <element signature="e#0#21419#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/transport/DefaultClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="1185">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/ChannelOutboundHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/Channel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/jdk1.8/src.zip!/java/nio/channels/spi/AbstractInterruptibleChannel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="136" column="25" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
+          <folding>
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4315#4316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/jdk1.8/jre/lib/rt.jar!/sun/nio/ch/SelectorProviderImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/socket/nio/NioSocketChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/nio/AbstractNioByteChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="23" column="60" lean-forward="true" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/jdk1.8/jre/lib/rt.jar!/sun/nio/ch/SocketChannelImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/jdk1.8/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/jdk1.8/src.zip!/java/net/InetSocketAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/bootstrap/Bootstrap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/bootstrap/AbstractBootstrap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="228" selection-start-line="228" selection-end-line="228" />
+          <folding>
+            <element signature="e#8715#8716#0" expanded="true" />
+            <element signature="e#8755#8756#0" expanded="true" />
+            <element signature="e#8965#8966#0" expanded="true" />
+            <element signature="e#8998#8999#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/MultithreadEventLoopGroup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1264#1265#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/DefaultChannelPromise.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/nio/AbstractNioChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#2760#2761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/SingleThreadEventLoop.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/AbstractChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="407" selection-start-line="407" selection-end-line="407" />
+          <folding>
+            <element signature="e#12119#12314#0" expanded="true" />
+            <element signature="e#12313#12314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/DefaultChannelPipeline.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="690" selection-start-line="690" selection-end-line="690" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/DefaultChannelHandlerContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#743#744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/ChannelInitializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/lib/io/netty/netty-all/4.0.36.Final/netty-all-4.0.36.Final.jar!/io/netty/channel/AbstractChannelHandlerContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/netty/codec/RedEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1469,8 +1460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ClientTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" column="52" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+        <state relative-caret-position="92">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1479,8 +1470,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/red-core/src/main/java/com/red/api/rpc/RedReferer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="118" column="57" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
+        <state relative-caret-position="235">
+          <caret line="119" column="57" selection-start-line="119" selection-start-column="57" selection-end-line="119" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/red-demo/src/main/java/com/red/demo/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

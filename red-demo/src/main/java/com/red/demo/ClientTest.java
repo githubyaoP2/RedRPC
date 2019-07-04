@@ -37,7 +37,7 @@ public class ClientTest {
         protocolConfig.setCodec("red");
 //        protocolConfig.setLoadBalance(new ConsistentHashLoadBalance());
 //        protocolConfig.setHaStrategy(new FailFastHaStrategy());
-        protocolConfig.setClientConnections(10);
+        protocolConfig.setClientConnections(2);
         clientConfig.setProtocolConfig(protocolConfig);
         DefaultClient<HelloService> client = new DefaultClient(clientConfig);
         HelloService helloService = client.getRef();

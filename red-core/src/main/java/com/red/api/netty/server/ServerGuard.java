@@ -21,6 +21,12 @@ public class ServerGuard extends ChannelInboundHandlerAdapter {
     }
 
     @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("-----------");
+        super.channelActive(ctx);
+    }
+
+    @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
         if(channels.size() >= maxConnections){

@@ -83,24 +83,24 @@ public class RedReferer implements Referer{
         bootstrap = new Bootstrap();
         MessageToByteEncoder redEncoder;// = new RedEncoder(protocolConfig.getSerialization());
         ByteToMessageDecoder redDecoder;// = new RedDecoder(protocolConfig.getSerialization());
-        switch (protocolConfig.getCodec()){
-            case "red":
-                redEncoder = new RedEncoder(protocolConfig.getSerialization());
-                redDecoder = new RedDecoder(protocolConfig.getSerialization());
-                break;
-            case "local":
-            default:
-                redEncoder = new RedEncoder(protocolConfig.getSerialization());
-                redDecoder = new RedDecoder(protocolConfig.getSerialization());
-        }
+//        switch (protocolConfig.getCodec()){
+//            case "red":
+//                redEncoder = new RedEncoder(protocolConfig.getSerialization());
+//                redDecoder = new RedDecoder(protocolConfig.getSerialization());
+//                break;
+//            case "local":
+//            default:
+//                redEncoder = new RedEncoder(protocolConfig.getSerialization());
+//                redDecoder = new RedDecoder(protocolConfig.getSerialization());
+//        }
         RedMessageHandler redMessageHandler = new RedMessageHandler();
         bootstrap.group(nioEventLoopGroup).
                 channel(NioSocketChannel.class).
                 handler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
                     protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
-                        nioSocketChannel.pipeline().addLast(redDecoder);
-                        nioSocketChannel.pipeline().addLast(redEncoder);
+                        nioSocketChannel.pipeline().addLast(new RedDecoder(protocolConfig.getSerialization()));
+                        nioSocketChannel.pipeline().addLast(new RedEncoder(protocolConfig.getSerialization()));
                         nioSocketChannel.pipeline().addLast(redMessageHandler);
                     }
                 });
@@ -116,7 +116,8 @@ public class RedReferer implements Referer{
                     if(future.isSuccess()) {
                         channelList.add(future.channel());
                     }else{
-                        System.out.println(future.cause());
+//                        System.out.println(future.cause().getStackTrace());
+                        future.cause().printStackTrace();
                     }
                 }
             });
